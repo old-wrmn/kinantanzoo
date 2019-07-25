@@ -1,32 +1,49 @@
 <section id='about' class="s-about">
+<div class="row section-header" data-aos="fade-up">
+            <div class="col-full">
+                <h3 class="subhead">Review</h3>
+                <h1 class="display-1">Apa saja tanggapan pengunjung?</h1>
+            </div>
+        </div>
 <div class="row">
 
 <div>
+<div class="row testimonials">
 
-    <h3>Tanggapan Anda</h3>
+<div class="col-full testimonials__slider">
+    <?php
+    $uls="SELECT * from ulasan where ulasanstatus=true order by ulasanwaktu LIMIT 6";
+    $res=pg_query($uls);
+    while ($one=pg_fetch_array($res)){
+    ?>
 
-    <form>
-            <div>
-                <label for="sampleInput">Your email</label>
-                <input class="full-width" type="email" placeholder="test@mailbox.com" id="sampleInput">
+    <div class="testimonials__slide">
+        <p><?=$one['ulasanpesan']?></p>
+        <div class="testimonials__author">
+            <?=$one['ulasannama']?>
+            <span><?=$one['ulasanemail']?></span>
+        </div>
+    </div> <!-- end testimonials__slide -->
+    <?php }?>
+
+</div> <!-- end testimonials__slider -->
+
+</div> <!-- end testimonials -->
+
+    <h3>Tambahkan Tanggapan Anda</h3>
+
+    <form action="php/action.php" method="post">
+        <div>
+            <label for="sampleInput">Nama</label>
+            <input class="full-width" type="text" name="nama" id="sampleInput" required>
         </div>
         <div>
-                <label for="sampleRecipientInput">Reason for contacting</label>
-                <div class="cl-custom-select">
-                    <select class="full-width" id="sampleRecipientInput">
-                        <option value="Option 1">Questions</option>
-                        <option value="Option 2">Report</option>
-                        <option value="Option 3">Others</option>
-                    </select>
-                </div>
+            <label for="sampleInput2">E-mail</label>
+            <input class="full-width" type="text" name="email" id="sampleInput2" required>
         </div>
-        
-            <label for="exampleMessage">Message</label>
-            <textarea class="full-width" placeholder="Your message" id="exampleMessage"></textarea>
-
-        
-            <input class="btn--primary" type="submit" value="Submit">
-
+        <label for="exampleMessage">Tanggapan</label>
+        <textarea class="full-width" name="pesan" id="exampleMessage"></textarea>
+        <input class="btn--primary" type="submit" name="review" value="Submit">
     </form>
 
 </div>

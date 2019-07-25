@@ -1,3 +1,7 @@
+
+<?php 
+include 'php/conn.php';
+?>
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 <head>
