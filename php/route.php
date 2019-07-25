@@ -8,6 +8,9 @@ if(isset($_GET['view'])){
         case 'about':
             include "view/about.php";
             break;
+        case 'review':
+            include "view/review.php";
+            break;
         default : 
             include "view/404.php";
             break;
