@@ -1,4 +1,5 @@
 <?php 
+include '../../php/conn.php';
 include 'function.php';
 if(isset($_POST['login'])){
     $nip=$_POST['nip'];
@@ -12,6 +13,5 @@ if(isset($_POST['login'])){
         header('location:../?msg=fail');
     }
 }
-
 
 ?>

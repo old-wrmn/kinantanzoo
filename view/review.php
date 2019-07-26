@@ -12,12 +12,13 @@
 
 <div class="col-full testimonials__slider">
     <?php
-    $uls="SELECT * from ulasan where ulasanstatus=true order by ulasanwaktu LIMIT 6";
+    $uls="SELECT * from ulasan where ulasanstatus=true order by ulasanwaktu DESC LIMIT 6";
     $res=pg_query($uls);
     while ($one=pg_fetch_array($res)){
     ?>
 
     <div class="testimonials__slide">
+        <span><?= substr($one['ulasanwaktu'],0,10)?></span>
         <p><?=$one['ulasanpesan']?></p>
         <div class="testimonials__author">
             <?=$one['ulasannama']?>

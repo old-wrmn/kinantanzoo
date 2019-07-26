@@ -11,10 +11,11 @@ include 'conn.php';
         ulasanstatus,
         ulasanwaktu)
     values (
-        '$nama',
         '$email',
+        '$nama',
         '$pesan',
         false,
         now())";
-        echo $query;
+    pg_query($query);
+    header('location:..');
  }?>
