@@ -16,6 +16,6 @@ include 'conn.php';
         '$pesan',
         false,
         now())";
-    pg_query($query);
+    mysqli_query($conn,$query);
     header('location:..');
  }?>

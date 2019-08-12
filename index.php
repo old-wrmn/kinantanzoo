@@ -55,7 +55,7 @@ include 'php/conn.php';
                     <li><a href="?view=home" title="home">Home</a></li>
                     <li><a href="?view=about" title="about">About</a></li>
                     <li><a href="#services" title="services">Satwa</a></li>
-                    <li><a href="#works" title="works">Berita</a></li>
+                    <li><a href="?view=news" title="works">Berita</a></li>
                     <li><a href="?view=review" title="contact">Review</a></li>
                 </ul>
     

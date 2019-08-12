@@ -1,8 +1,8 @@
 <?php 
 $id=$_GET['id'];
 $sql="SELECT * from ulasan where ulasanid=$id";
-$res=pg_query($sql);
-while($i=pg_fetch_array($res)){?>
+$res=mysqli_query($conn,$sql);
+while($i=mysqli_fetch_array($res)){?>
 <div class="col-lg-12">
 <div class="card">
     <div class="card-header">
@@ -14,7 +14,7 @@ while($i=pg_fetch_array($res)){?>
         <ul class="nav nav-pills">
             <li class="nav-item">
                 <?php 
-                if($i['ulasanstatus']=='t'){
+                if($i['ulasanstatus']==1){
                 ?>
                 <td>
                     <a class="nav-link active" href="?action=hide&id=<?=$id?>">Hide</a>

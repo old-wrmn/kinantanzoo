@@ -1,5 +1,4 @@
 <?php
-
 if(isset($_GET['logout'])){
     session_destroy();
     unset($_SESSION['user']);
@@ -14,6 +13,7 @@ function isLoggedIn(){
 }
 
 function login($nmr,$pwd){
+	$conn=mysqli_connect("localhost","root","","kinantan");
     $login =
 		"SELECT 
 			* 
@@ -22,29 +22,30 @@ function login($nmr,$pwd){
 		WHERE 
 			pegawaiNomorInduk='$nmr' 
 		AND 
-			pegawaiPassword='$pwd' 
-		LIMIT 1";
-    $login_R = pg_query($login);
+			pegawaiPassword='$pwd'";
+    $login_R = mysqli_query($conn,$login);
 	return $login_R;
 }
 
 function show($id){
+	$conn=mysqli_connect("localhost","root","","kinantan");
 	$sql="UPDATE 
 			ulasan 
 		set 
 			ulasanstatus=true,
 			pegawainomorinduk=".$_SESSION['user']['pegawainomorinduk']."
 		where ulasanid=$id";
-	pg_query($sql);
+	mysqli_query($conn,$sql);
 }
 
 function hide($id){
+	$conn=mysqli_connect("localhost","root","","kinantan");
 	$sql="UPDATE 
 			ulasan 
 		set 
 			ulasanstatus=false,
 			pegawainomorinduk=".$_SESSION['user']['pegawainomorinduk']."
 		where ulasanid=$id";
-	pg_query($sql);
+	mysqli_query($conn,$sql);
 }
 ?>

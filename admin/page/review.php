@@ -13,14 +13,14 @@
         <tbody>
             <?php
             $query="SELECT * from ulasan order by ulasanwaktu DESC ";
-            $res=pg_query($query);
-            while($i=pg_fetch_array($res)){?>
+            $res=mysqli_query($conn,$query);
+            while($i=mysqli_fetch_array($res)){?>
             <tr>
                 <td><?=$i['ulasanwaktu']?></td>
                 <td><?=ucfirst($i['ulasannama'])?></td>
                 <td><?=$i['ulasanemail']?></td>
                 <?php 
-                if($i['ulasanstatus']=='t'){
+                if($i['ulasanstatus']==1){
                 ?>
                 <td>
                 <span class="status--process">Show</span>
