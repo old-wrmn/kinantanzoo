@@ -1,0 +1,353 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "nama": "Harimau",
+      "properties": {},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.3695,
+          -0.3002
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "nama": "beruang madu",
+      "properties": {},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.36967,
+          -0.29979
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "nama": "Rusa Air/Rusa Sambar",
+      "properties": {},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.3697,
+          -0.3001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "nama": "Tapir",
+      "properties": {},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.3694,
+          -0.30145
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "nama": "Rusa",
+      "properties": {},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.36951,
+          -0.30131
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "nama": "Singa",
+      "properties": {},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.3698,
+          -0.30043
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "nama": "Toilet",
+      "properties": {},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.36972,
+          -0.30053
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "nama": "binturong",
+      "properties": {},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.3696,
+          -0.3005
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "nama": "zebra",
+      "properties": {},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.36935,
+          -0.30102
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "nama": "gajah",
+      "properties": {},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.3691,
+          -0.30098
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "nama": "Rumah Adat",
+      "properties": {},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.36958,
+          -0.3007
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "nama": "Kolam Ikan",
+      "properties": {},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.36976,
+          -0.30095
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "nama": "orang utan",
+      "properties": {},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.36991,
+          -0.30006
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "nama": "Harimau2",
+      "properties": {},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.36968,
+          -0.29995
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "nama": "Burung kasuari",
+      "properties": {},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.36944,
+          -0.29996
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "nama": "Harimau dahan",
+      "properties": {},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.36993,
+          -0.29985
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "nama": "Tempat duduk gantung",
+      "properties": {},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.36996,
+          -0.30018
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "nama": "Landak",
+      "properties": {},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.37006,
+          -0.30018
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "nama": "kancil",
+      "properties": {},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.37022,
+          -0.30029
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "nama": "siamang",
+      "properties": {},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.36997,
+          -0.29994
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "nama": "macan dahan",
+      "properties": {},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.37001,
+          -0.30003
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "nama": "buaya",
+      "properties": {},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.37035,
+          -0.30045
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "nama": "kura-kura sawah",
+      "properties": {},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.37035,
+          -0.30035
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "nama": "toilet 2",
+      "properties": {},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.37003,
+          -0.30034
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "nama": "merak biru",
+      "properties": {},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.37013,
+          -0.30038
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "nama": "mushalla",
+      "properties": {},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.37016,
+          -0.30072
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "nama": "tempat duduk",
+      "properties": {},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.37008,
+          -0.3008
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "nama": "museum zoologi",
+      "properties": {},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.3705,
+          -0.30074
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "nama": "aquarium",
+      "properties": {},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.3705,
+          -0.3006
+        ]
+      }
+    }
+  ]
+}
