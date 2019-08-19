@@ -1,4 +1,8 @@
 <!-- DATA TABLE-->
+<div class="card">
+<div class="card-header">
+    <h4>Ulasan</h4>
+</div> 
 <div class="table-responsive">
     <table class="table table-borderless table-data3">
         <thead>
@@ -43,5 +47,6 @@
             <?php }?>
         </tbody>
     </table>
+    </div>
 </div>
 <!-- END DATA TABLE-->

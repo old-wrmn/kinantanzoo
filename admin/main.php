@@ -89,7 +89,7 @@
                                 Pegawai</a>
                             </li>
                         <li>
-                            <a href="?page=berita">
+                            <a href="?page=news">
                                 Berita</a>
                         </li>
                         <li>
@@ -123,6 +123,10 @@
                                                     </h5>
                                                     <span class="email"><?=$_SESSION['user']['pegawainomorinduk']?></span>
                                                 </div>
+                                            </div>
+                                            <div class="account-dropdown__footer">
+                                                <a href="?page=chgpwd">
+                                                    <i class="zmdi zmdi-lock"></i>Ganti Password</a>
                                             </div>
                                             <div class="account-dropdown__footer">
                                                 <a href="?logout">

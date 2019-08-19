@@ -28,7 +28,28 @@ include 'php/conn.php';
     <script src="js/modernizr.js"></script>
     <script src="js/pace.min.js"></script>
 
-    
+    <!-- Mapbox
+    ================================================== -->
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.2.1/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.2.1/mapbox-gl.css' rel='stylesheet' />
+    <style>
+    body { margin:0; padding:0; }
+    #map { position:absolute; top:0; bottom:0; width:100%; }
+    .coordinates {
+        background: rgba(0,0,0,0.5);
+        color: #fff;
+        position: absolute;
+        bottom: 40px;
+        left: 10px;
+        padding:5px 10px;
+        margin: 0;
+        font-size: 11px;
+        line-height: 18px;
+        border-radius: 3px;
+        display: none;
+        }
+    </style>
+
 </head>
 
 <body id="top">
@@ -54,7 +75,7 @@ include 'php/conn.php';
                 <ul class="header-nav__list">
                     <li><a href="?view=home" title="home">Home</a></li>
                     <li><a href="?view=about" title="about">About</a></li>
-                    <li><a href="#services" title="services">Satwa</a></li>
+                    <li><a href="?view=satwa" title="services">Satwa</a></li>
                     <li><a href="?view=news" title="works">Berita</a></li>
                     <li><a href="?view=review" title="contact">Review</a></li>
                 </ul>
@@ -86,6 +107,7 @@ include 'php/conn.php';
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/map.js"></script>
 
 </body>
 

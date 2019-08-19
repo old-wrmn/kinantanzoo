@@ -27,6 +27,25 @@ function login($nmr,$pwd){
 	return $login_R;
 }
 
+function chkpwd($pwd,$nomorinduk){
+	$conn=mysqli_connect("localhost","root","","kinantan");
+	$login =
+		"SELECT 
+			* 
+		FROM 
+			pegawai 
+		WHERE 
+			pegawaiNomorInduk=$nomorinduk 
+		";
+	$login_R = mysqli_query($conn,$login);
+	while($res=mysqli_fetch_assoc($login_R)){
+		$hasil=$res['pegawaipassword'];
+	}
+	if($hasil==$pwd){
+		return true;
+	}
+}
+
 function show($id){
 	$conn=mysqli_connect("localhost","root","","kinantan");
 	$sql="UPDATE 
