@@ -35,7 +35,14 @@ include 'php/conn.php';
     <style>
     body { margin:0; padding:0; }
     #map { position:absolute; top:0; bottom:0; width:100%; }
-    .coordinates {
+        .marker {
+        display: block;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        padding: 0;
+        }
+        .coordinates {
         background: rgba(0,0,0,0.5);
         color: #fff;
         position: absolute;
@@ -48,6 +55,25 @@ include 'php/conn.php';
         border-radius: 3px;
         display: none;
         }
+        #instructions {
+  position: absolute;
+  margin: 20px;
+  width: 25%;
+  top: 0;
+  bottom: 20%;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.9);
+  overflow-y: scroll;
+  font-family: sans-serif;
+  font-size: 0.8em;
+  line-height: 2em;
+}
+
+.duration {
+  font-size: 2em;
+}
+
+
     </style>
 
 </head>

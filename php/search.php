@@ -1,5 +1,6 @@
-<?php
+  <?php
 include("conn.php");
+$nama=$_GET['nama'];
 $sql = "SELECT 
         * 
         FROM 
@@ -7,7 +8,8 @@ $sql = "SELECT
           left join 
             hewan on bangunan.bangunanid=hewan.bangunanid
           left join 
-            jenis on hewan.jenisid=jenis.jenisid";
+            jenis on hewan.jenisid=jenis.jenisid
+        where hewannama='$nama'";
 $result = $conn->query($sql);
 $hasil = array(
 	'type'	=> 'FeatureCollection',
@@ -25,10 +27,12 @@ while ($isinya = @mysqli_fetch_assoc($result)) {
       )
     ),
 		'properties' => array(
-      'id' => $isinya['hewanid'],
-      'nama' => $isinya['hewannama'],
-      'gambar' => $isinya['bangunangambar'],
-      'jenis' => $isinya['jenisnama'],
+            "marker-color"=> "#e81818",
+            "marker-size"=> "medium",
+            'id' => $isinya['hewanid'],
+            'nama' => $isinya['hewannama'],
+            'gambar' => $isinya['hewangambar'],
+            'jenis' => $isinya['jenisnama'],
 			'bangunanid' => $isinya['bangunanid'],
 			'keterangan' => $isinya['bangunanketerangan']
 			)
