@@ -102,7 +102,7 @@
                         </li>
                         <li>
                             <a href="?page=jenis">
-                                Jenis</a>
+                                Jenis </a>
                         </li>
                         <li>
                             <a href="?page=satwa">
