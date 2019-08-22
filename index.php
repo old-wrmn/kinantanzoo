@@ -100,10 +100,9 @@ include 'php/conn.php';
                 
                 <ul class="header-nav__list">
                     <li><a href="?view=home" title="home">Home</a></li>
-                    <li><a href="?view=about" title="about">About</a></li>
-                    <li><a href="?view=satwa" title="services">Satwa</a></li>
-                    <li><a href="?view=news" title="works">Berita</a></li>
-                    <li><a href="?view=review" title="contact">Review</a></li>
+                    <li><a href="?view=satwa" title="satwa">Satwa</a></li>
+                    <li><a href="?view=news" title="berita">Berita</a></li>
+                    <li><a href="?view=review" title="review">Review</a></li>
                 </ul>
     
            

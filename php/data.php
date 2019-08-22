@@ -7,7 +7,9 @@ $sql = "SELECT
           left join 
             hewan on bangunan.bangunanid=hewan.bangunanid
           left join 
-            jenis on hewan.jenisid=jenis.jenisid";
+            jenis on hewan.jenisid=jenis.jenisid
+          left join
+            pegawai on jenis.pegawainomorinduk=pegawai.pegawainomorinduk";
 $result = $conn->query($sql);
 $hasil = array(
 	'type'	=> 'FeatureCollection',
@@ -30,7 +32,10 @@ while ($isinya = @mysqli_fetch_assoc($result)) {
       'gambar' => $isinya['bangunangambar'],
       'jenis' => $isinya['jenisnama'],
 			'bangunanid' => $isinya['bangunanid'],
-			'keterangan' => $isinya['bangunanketerangan']
+      'keterangan' => $isinya['bangunanketerangan'],
+      'hewanket' => $isinya['hewanketerangan'],
+      'pawang' => $isinya['pegawainama'],
+      'nip' => $isinya['pegawainomorinduk']
 			)
 		);
 	array_push($hasil['features'], $features);

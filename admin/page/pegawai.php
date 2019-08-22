@@ -21,7 +21,7 @@
                 <th>golongan</th>
                 <th>jabatan</th>
                 <th>tugas</th>
-                <th>view</th>
+                <th>act</th>
             </tr>
         </thead>
         <tbody>
@@ -32,7 +32,7 @@
             <tr>
                 <td><?=$i['pegawainomorinduk']?></td>
                 <td><?=ucfirst($i['pegawainama'])?>, <?=ucfirst($i['pegawaigelar'])?></td>
-                <td><?=$i['pegawaigolongan']?></td>
+                <td><?=strtoupper($i['pegawaigolongan'])?></td>
                 <td><?=ucfirst($i['jabatannama'])?></td>
                 <td><?=ucfirst($i['pegawaitugas'])?></td>
                 <td>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Aug 13, 2019 at 05:28 PM
+-- Generation Time: Aug 20, 2019 at 01:30 PM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.3.1
 
@@ -31,11 +31,40 @@ SET time_zone = "+00:00";
 CREATE TABLE `bangunan` (
   `bangunanid` int(11) NOT NULL,
   `tipeid` int(11) DEFAULT NULL,
-  `bangunanlat` float DEFAULT NULL,
-  `bangunanlong` float DEFAULT NULL,
-  `pegawainomorinduk` bigint(20) DEFAULT NULL,
+  `bangunanlat` varchar(20) DEFAULT NULL,
+  `bangunanlong` varchar(20) DEFAULT NULL,
+  `bangunangambar` varchar(100) NOT NULL,
   `bangunanketerangan` text
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `bangunan`
+--
+
+INSERT INTO `bangunan` (`bangunanid`, `tipeid`, `bangunanlat`, `bangunanlong`, `bangunangambar`, `bangunanketerangan`) VALUES
+(1, 1, '100.3695', '-0.3001999855', 'harimau.jpg', 'kandang harimau'),
+(2, 1, '100.36967', '-0.2997899950', 'beruang.jpg', 'kandang beruang madu'),
+(3, 1, '100.3697', '-0.3000999987', 'rusasambaar.jpg', 'kandang rusa air'),
+(4, 1, '100.3694', '-0.3014500141', 'tapir.jpg', 'kandang tapir'),
+(5, 1, '100.36951', '-0.3013100028', 'rusa.jpg', 'kandang rusa'),
+(6, 1, '100.3698', '-0.3004299998', 'singa.jpg', 'kandang singa'),
+(7, 1, '100.3696', '-0.3005000055', 'binturong.jpg', 'kandang binturong'),
+(8, 1, '100.36935', '-0.3010199964', 'zebra.jpg', 'kandang zebra'),
+(9, 1, '100.3691', '-0.3009800017', 'gajah.jpg', 'kandang gajah'),
+(10, 1, '100.36968', '-0.2999500036', 'harimau.jpg', 'kandang harimau'),
+(11, 1, '100.36944', '-0.2999599874', 'burungkasuari.jpg', 'kandang burung kasuari'),
+(12, 1, '100.37006', '-0.3001799881', 'landak.jpg', 'kandang landak'),
+(13, 1, '100.36992', '-0.2999599874', 'siamang.jpg', 'kandang orang utan<br>\r\nkandang harrimau dahan<br>\r\nkandang siamang<br>\r\nkandang macan dahan'),
+(14, 1, '100.37015', '-0.3003500104', 'merakbiru.jpg', 'kandang kancil<br>\r\nkandang merak biru'),
+(15, 1, '100.37035', '-0.3003999889', 'buaya.jpg', 'kandang buaya<br>\r\nkandang kura-kura sawah'),
+(16, 2, '100.36972', '-0.3005299866', 'toilet.jpg', 'toilet umum'),
+(17, 2, '100.37003', '-0.3003399968', 'toilet.jpg', 'toilet umum'),
+(18, 2, '100.37016', '-0.3007200062', 'musholla.jpg', 'musholla'),
+(19, 2, '100.37008', '-0.3007999957', 'tempatduduk.jpg', 'tempat duduk'),
+(20, 2, '100.37006', '-0.3001799881', 'tempatdudukgantung.jpg', 'tempat duduk gantung'),
+(21, 3, '100.3705', '-0.3007400036', 'zoologi.jpg', 'museum zoologi'),
+(22, 3, '100.3705', '-0.3005999923', 'aquarium.jpg', 'aquarium'),
+(23, 3, '100.36958', '', 'rumahadat.jpg', 'rumah adat');
 
 -- --------------------------------------------------------
 
@@ -68,11 +97,37 @@ INSERT INTO `berita` (`beritaid`, `pegawainomorinduk`, `beritajudul`, `beritaisi
 
 CREATE TABLE `hewan` (
   `hewanid` int(11) NOT NULL,
-  `hewannama` varchar(20) DEFAULT NULL,
+  `hewannama` varchar(24) DEFAULT NULL,
   `jenisid` int(11) DEFAULT NULL,
   `hewanketerangan` text,
+  `hewangambar` varchar(100) NOT NULL,
   `bangunanid` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `hewan`
+--
+
+INSERT INTO `hewan` (`hewanid`, `hewannama`, `jenisid`, `hewanketerangan`, `hewangambar`, `bangunanid`) VALUES
+(1, 'merak biru', 5, NULL, 'merakbiru.jpg', 14),
+(2, 'burung kasuari', 5, NULL, 'burungkasuari.jpg', 11),
+(3, 'buaya', 4, NULL, 'buaya.jpg', 15),
+(4, 'kura-kura sawah', 4, NULL, 'kurakurasawah.jpg', 15),
+(5, 'binturong', 1, NULL, 'binturong.jpg', 7),
+(6, 'zebra', 1, NULL, 'zebra.jpg', 8),
+(7, 'rusa air / rusa sambar', 1, NULL, 'rusasambar.jpg', 3),
+(8, 'tapir', 1, NULL, 'tapir.jpg', 4),
+(9, 'rusa', 1, NULL, 'rusa.jpg', 5),
+(10, 'landak', 1, NULL, 'landak.jpg', 12),
+(11, 'kancil', 1, NULL, 'kancil.jpg', 14),
+(12, 'orangutan', 3, NULL, 'orangutan.jpg', 13),
+(13, 'siamang', 3, NULL, 'siamang.jpg', 13),
+(14, 'harimau', 2, NULL, 'harimau.jpg', 10),
+(15, 'beruang madu', 2, NULL, 'beruang.jpg', 2),
+(16, 'singa', 2, NULL, 'singa.jpg', 6),
+(17, 'gajah', 2, NULL, 'gajah.jpg', 9),
+(18, 'macan dahan', 2, NULL, 'macandahan.jpg', 13),
+(19, 'harimau dahan', 2, NULL, 'harimaudahan.jpg', 13);
 
 -- --------------------------------------------------------
 
@@ -110,6 +165,17 @@ CREATE TABLE `jenis` (
   `pegawainomorinduk` bigint(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `jenis`
+--
+
+INSERT INTO `jenis` (`jenisid`, `jenisnama`, `pegawainomorinduk`) VALUES
+(1, 'mamalia', 197304022006041008),
+(2, 'mamalia besar', 197107262005011004),
+(3, 'mamalia primata', 196406302008011001),
+(4, 'reptil', 197203182006041001),
+(5, 'aves', 196405062002121001);
+
 -- --------------------------------------------------------
 
 --
@@ -131,8 +197,12 @@ CREATE TABLE `pegawai` (
 --
 
 INSERT INTO `pegawai` (`pegawainomorinduk`, `pegawainama`, `pegawaigelar`, `pegawaipassword`, `pegawaigolongan`, `jabatanid`, `pegawaitugas`) VALUES
+(196405062002121001, 'sabardi', '', '827ccb0eea8a706c4c34a16891f84e7b', 'ii/d', 5, 'Keeper aves'),
+(196406302008011001, 'ramli', '', '827ccb0eea8a706c4c34a16891f84e7b', 'i/c', 5, 'keeper mamalia primata'),
 (196506081990011001, 'ikbal', 'SH', '827ccb0eea8a706c4c34a16891f84e7b', 'IV/A', 1, 'penanggung jawab/KPA'),
-(196506081990011002, 'mmmm', 'S.pd', '040b7cf4a55014e185813e0644502ea9', 'III/a', 6, 'asdsadas');
+(197107262005011004, 'tasenu', 'S.St', '827ccb0eea8a706c4c34a16891f84e7b', 'III/b', 5, 'keeper mamalia besar'),
+(197203182006041001, 'edi warman', '', '827ccb0eea8a706c4c34a16891f84e7b', 'ii/b', 5, 'keeper reptil'),
+(197304022006041008, 'yulfitri', '', '827ccb0eea8a706c4c34a16891f84e7b', 'ii/b', 5, 'keeper mamalia');
 
 -- --------------------------------------------------------
 
@@ -145,6 +215,15 @@ CREATE TABLE `tipe` (
   `tipenama` varchar(50) DEFAULT NULL,
   `tipeketerangan` text
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tipe`
+--
+
+INSERT INTO `tipe` (`tipeid`, `tipenama`, `tipeketerangan`) VALUES
+(1, 'kandang', NULL),
+(2, 'fasilitas umum', NULL),
+(3, 'bangunan TMSBK', NULL);
 
 -- --------------------------------------------------------
 
@@ -181,7 +260,6 @@ INSERT INTO `ulasan` (`ulasanid`, `ulasanemail`, `ulasannama`, `ulasanpesan`, `p
 --
 ALTER TABLE `bangunan`
   ADD PRIMARY KEY (`bangunanid`),
-  ADD KEY `pegawainomorinduk` (`pegawainomorinduk`),
   ADD KEY `tipeid` (`tipeid`);
 
 --
@@ -240,7 +318,7 @@ ALTER TABLE `ulasan`
 -- AUTO_INCREMENT for table `bangunan`
 --
 ALTER TABLE `bangunan`
-  MODIFY `bangunanid` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `bangunanid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `berita`
@@ -252,25 +330,25 @@ ALTER TABLE `berita`
 -- AUTO_INCREMENT for table `hewan`
 --
 ALTER TABLE `hewan`
-  MODIFY `hewanid` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `hewanid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `jabatan`
 --
 ALTER TABLE `jabatan`
-  MODIFY `jabatanid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `jabatanid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `jenis`
 --
 ALTER TABLE `jenis`
-  MODIFY `jenisid` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `jenisid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `tipe`
 --
 ALTER TABLE `tipe`
-  MODIFY `tipeid` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `tipeid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `ulasan`
@@ -286,7 +364,6 @@ ALTER TABLE `ulasan`
 -- Constraints for table `bangunan`
 --
 ALTER TABLE `bangunan`
-  ADD CONSTRAINT `bangunan_ibfk_1` FOREIGN KEY (`pegawainomorinduk`) REFERENCES `pegawai` (`pegawainomorinduk`),
   ADD CONSTRAINT `bangunan_ibfk_2` FOREIGN KEY (`tipeid`) REFERENCES `tipe` (`tipeid`);
 
 --

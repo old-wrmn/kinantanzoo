@@ -2,6 +2,15 @@
 <div class="card">
 <div class="card-header">
     <h4>Ulasan</h4>
+    <div style="float:right">
+        <ul class="nav nav-pills">
+            <li class="nav-item">
+                <td>
+                    <a class="btn btn-primary" href="page/cetakrev.php">Cetak</a>
+                </td>
+            </li>
+        </ul>
+    </div>
 </div> 
 <div class="table-responsive">
     <table class="table table-borderless table-data3">

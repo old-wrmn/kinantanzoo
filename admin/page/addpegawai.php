@@ -1,7 +1,7 @@
 <div class="col-lg-12">
     <div class="card">
         <div class="card-header">
-            <strong>Horizontal</strong> Form
+            <strong>Pegawai</strong> Form
         </div>
         <div class="card-body card-block">
             <form action="php/action.php" method="post" class="form-horizontal">

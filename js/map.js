@@ -222,7 +222,10 @@ map.on('load', function() {
 
   map.on('click','bangunan', function(e) {
     var description = e.features[0].properties.keterangan;
+    var andesc = e.features[0].properties.hewanket;
     var img = e.features[0].properties.gambar;
+    var jenis = e.features[0].properties.jenis;
+    var pegawai = e.features[0].properties.pawang + "(" + e.features[0].properties.nip + ")";
     
     description = description.toLowerCase().replace(/\b[a-z]/g, function(letter) {
       return letter.toUpperCase();
@@ -230,10 +233,14 @@ map.on('load', function() {
 
     var coordsObj = e.lngLat;
     canvas.style.cursor = '';
-        
+    if(jenis!="null"){
+    document.getElementById("test").innerHTML=andesc + "<br>Jenis : " + jenis + "<br>Pawang :" + pegawai;}
+    else{
+      document.getElementById("test").innerHTML=" ";
+    }
     var popup = new mapboxgl.Popup({closeOnClick: false})
       .setLngLat(coordsObj)
-      .setHTML("<img src='images/hewan/" + img + "' alt='Smiley face' height='420' width='420'><center>" + description + "</center>")
+      .setHTML("<img src='images/hewan/" + img + "' alt='gambar hewan' height='420' width='420'><center>" + description + "</center>")
       .addTo(map);
 
     var coords = Object.keys(coordsObj).map(function(key) {

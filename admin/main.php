@@ -59,7 +59,19 @@
                         <li>
                             <a href="?page=pegawai">
                                 Pegawai</a>
-                            </li>
+                        </li>
+                        <li>
+                            <a href="?page=jenis">
+                                jenis</a>
+                        </li>
+                        <li>
+                            <a href="?page=satwa">
+                                Satwa</a>
+                        </li>
+                        <!-- <li>
+                            <a href="?page=bangunan">
+                                Bangunan</a>
+                        </li> -->
                         <li>
                             <a href="?page=berita">
                                 Berita</a>
@@ -84,10 +96,22 @@
             <div class="menu-sidebar__content js-scrollbar1">
                 <nav class="navbar-sidebar">
                     <ul class="list-unstyled navbar__list">
-                    <li>
+                        <li>
                             <a href="?page=pegawai">
                                 Pegawai</a>
-                            </li>
+                        </li>
+                        <li>
+                            <a href="?page=jenis">
+                                Jenis</a>
+                        </li>
+                        <li>
+                            <a href="?page=satwa">
+                                Satwa</a>
+                        </li>
+                        <!-- <li>
+                            <a href="?page=bangunan">
+                                Bangunan</a>
+                        </!-->
                         <li>
                             <a href="?page=news">
                                 Berita</a>

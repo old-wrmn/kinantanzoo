@@ -35,7 +35,37 @@ if(isset($_POST['chgpwd'])){
         header('location:../?page=chgpwd');
     }
 }
-
+if(isset($_POST['addnews'])){
+    $judul=$_POST['judul'];
+    $isi=$_POST['isi'];
+    $gambar=$_FILES['fileToUpload']["name"];
+    $nip=$_SESSION['user']['pegawainomorinduk'];
+    $target_dir = "../../images/berita/";
+    $target_file = $target_dir . basename($_FILES['fileToUpload']["name"]);
+    $uploadOk = 1;
+    $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+    $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+        if($check !== false) {
+            echo "File is an image - " . $check["mime"] . ".";
+            $uploadOk = 1;
+        } else {
+            echo "File is not an image.";
+            $uploadOk = 0;
+        }
+        if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+            echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
+        } else {
+            echo "Sorry, there was an error uploading your file.";
+        }
+    $query=
+        "INSERT into 
+            berita
+                (pegawainomorinduk,beritajudul,beritaisi,beritatanggal,beritagambar)
+            VALUES
+                ($nip,'$judul','$isi',now(),'$gambar') ";
+    mysqli_query($conn,$query);
+    header('location:../?page=news');
+}
 if(isset($_POST['addpegawai'])){
     $nama=$_POST['nama'];
     $nomorinduk=$_POST['nip'];
@@ -52,6 +82,53 @@ if(isset($_POST['addpegawai'])){
                 ($jabatan,'$gelar','$golongan','$nama','$nomorinduk','$password','$tugas') ";
     mysqli_query($conn,$query);
     header('location:../?page=pegawai');
+}
+if(isset($_POST['addsatwa'])){
+    $nama=$_POST['nama'];
+    $jenis=$_POST['jenis'];
+    $keterangan=$_POST['keterangan'];
+    $gambar=$_FILES['fileToUpload']["name"];
+    $target_dir = "../../images/hewan/";
+    $target_file = $target_dir . basename($_FILES['fileToUpload']["name"]);
+    $uploadOk = 1;
+    $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+    $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+        if($check !== false) {
+            echo "File is an image - " . $check["mime"] . ".";
+            $uploadOk = 1;
+        } else {
+            echo "File is not an image.";
+            $uploadOk = 0;
+        }
+        if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+            echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
+        } else {
+            echo "Sorry, there was an error uploading your file.";
+        }
+    $query=
+        "INSERT into 
+            hewan
+                (jenisid,hewannama,hewanketerangan,hewangambar)
+            VALUES
+                ($jenis,'$nama','$keterangan','$gambar') ";
+    mysqli_query($conn,$query);
+    header('location:../?page=satwa');
+}
+if(isset($_POST['editsatwa'])){
+    $nama=$_POST['nama'];
+    $jenis=$_POST['jenis'];
+    $keterangan=$_POST['keterangan'];
+    $id=$_POST['id'];
+    $query=
+        "UPDATE  
+            hewan set
+                jenisid=$jenis,
+                hewannama='$nama',
+                hewanketerangan='$keterangan'
+            Where 
+                hewanid=$id";
+    mysqli_query($conn,$query);
+    header('location:../?page=satwa');
 }
 
 if(isset($_POST['editpegawai'])){
@@ -73,5 +150,17 @@ if(isset($_POST['editpegawai'])){
                 pegawainomorinduk=$nomorinduk";
     mysqli_query($conn,$query);
     header('location:../?page=pegawai');
+}
+if(isset($_POST['editjenis'])){
+    $id=$_POST['id'];
+    $nomorinduk=$_POST['nip'];
+    $query=
+        "UPDATE 
+            jenis SET
+                pegawainomorinduk='$nomorinduk'
+            WHERE
+                jenisid=$id";
+    mysqli_query($conn,$query);
+    header('location:../?page=jenis');
 }
 ?>
