@@ -9,6 +9,7 @@
                 <input type="text" id="pilihtipe" list="tipe" placeholder="Pilih Tipe">
                 <datalist id="tipe"></datalist>
                 <div id="test"></div>
+                <div id="demo"></div>
             </div>
             
         </div> <!-- end section-header -->

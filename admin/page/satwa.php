@@ -7,6 +7,9 @@
                 <td>
                     <a class="btn btn-primary" href="?page=addsatwa">Add</a>
                 </td>
+                <td>
+                    <a class="btn btn-primary" href="?page=jenis">Jenis </a>
+                </td>
             </li>
         </ul>
     </div>
@@ -37,7 +40,7 @@
                     <a href="?page=editsatwa&id=<?=$i['hewanid']?>" class="item" data-toggle="tooltip" data-placement="top" title="Edit">
                         <i class="fa fa-pencil-alt"></i>
                     </a>
-                    <a href="?delsatwa&id=<?=$i['hewanid']?>" class="item" data-toggle="tooltip" data-placement="top" title="Delete">
+                    <a href="?delsatwa&id=<?=$i['hewanid']?>&msg=success" class="item" data-toggle="tooltip" data-placement="top" title="Delete">
                         <i class="fa fa-trash"></i>
                     </a>
                 </td>

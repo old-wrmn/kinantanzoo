@@ -10,7 +10,8 @@ while($i=mysqli_fetch_array($res)){?>
             <ul class="nav nav-pills">
                 <li class="nav-item">
                     <td>
-                        <a class="btn btn-danger" href="?delnews&id=<?=$id?>">Delete</a>
+                        <a class="btn btn-primary" href="?page=editnews&id=<?=$id?>">Edit</a>
+                        <a class="btn btn-danger" href="?delnews&id=<?=$id?>&msg=success">Delete</a>
                     </td>
                 </li>
             </ul>

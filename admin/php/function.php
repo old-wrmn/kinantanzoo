@@ -12,17 +12,20 @@ function isLoggedIn(){
     }
 }
 
-function login($nmr,$pwd){
+function login($name,$pwd){
 	$conn=mysqli_connect("localhost","root","","kinantan");
     $login =
 		"SELECT 
 			* 
 		FROM 
 			pegawai 
+		JOIN jabatan
+			on jabatan.jabatanid=pegawai.jabatanid
 		WHERE 
-			pegawaiNomorInduk='$nmr' 
+			jabatannama='$name' 
 		AND 
-			pegawaiPassword='$pwd'";
+			pegawaiPassword='$pwd'
+		LIMIT 1";
     $login_R = mysqli_query($conn,$login);
 	return $login_R;
 }

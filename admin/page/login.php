@@ -39,6 +39,7 @@
     <div class="page-wrapper">
         <div class="page-content--bge5">
             <div class="container">
+            <?php include 'php/route.php';?> 
                 <div class="login-wrap">
                     <div class="login-content">
                         <div class="login-logo">
@@ -49,12 +50,12 @@
                         <div class="login-form">
                             <form action="php/action.php" method="post">
                                 <div class="form-group">
-                                    <label>Nomor Induk</label>
-                                    <input class="au-input au-input--full" type="text" name="nip">
+                                    <label>Username</label>
+                                    <input class="au-input au-input--full" type="text" name="name" required>
                                 </div>
                                 <div class="form-group">
                                     <label>Password</label>
-                                    <input class="au-input au-input--full" type="password" name="pwd">
+                                    <input class="au-input au-input--full" type="password" name="pwd" required>
                                 </div>
                                 <button class="au-btn au-btn--block au-btn--green m-b-20" name="login" type="submit">sign in</button>
                             </form>

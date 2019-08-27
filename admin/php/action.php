@@ -2,9 +2,9 @@
 include '../../php/conn.php';
 include 'function.php';
 if(isset($_POST['login'])){
-    $nip=$_POST['nip'];
+    $name=strtolower($_POST['name']);
     $pwd=md5($_POST['pwd']);
-    $login=login($nip,$pwd);
+    $login=login($name,$pwd);
     echo mysqli_num_rows($login);
     if(mysqli_num_rows($login)==1){
         $_SESSION['user']=mysqli_fetch_array($login);
@@ -24,15 +24,15 @@ if(isset($_POST['chgpwd'])){
         if(chkpwd($old,$nomorinduk)){
             $query="UPDATE pegawai set pegawaipassword='$new1' where pegawainomorinduk=$nomorinduk";
             mysqli_query($conn,$query);
-            header('location:../');
+            header('location:../?msg=success');
         }          
         else{
-            header('location:../?page=chgpwd');
+            header('location:../?page=chgpwd&mssg=fail');
         }
     }
 
     else{
-        header('location:../?page=chgpwd');
+        header('location:../?page=chgpwd&msg=fail');
     }
 }
 if(isset($_POST['addnews'])){
@@ -63,9 +63,53 @@ if(isset($_POST['addnews'])){
                 (pegawainomorinduk,beritajudul,beritaisi,beritatanggal,beritagambar)
             VALUES
                 ($nip,'$judul','$isi',now(),'$gambar') ";
-    mysqli_query($conn,$query);
-    header('location:../?page=news');
+    if(mysqli_query($conn,$query)){
+        header('location:../?page=news&msg=success');
+    }
+    else{
+        header('location:../?page=news&msg=fail');    
+    }
 }
+
+if(isset($_POST['editnews'])){
+    $id=$_POST['id'];
+    $judul=$_POST['judul'];
+    $isi=$_POST['isi'];
+    $nip=$_SESSION['user']['pegawainomorinduk'];
+    $query=
+        "UPDATE berita set 
+            pegawainomorinduk=$nip,
+            beritajudul='$judul',
+            beritaisi='$isi'
+        where
+           beritaid=$id";
+           echo $query;
+    if(mysqli_query($conn,$query)){
+        header('location:../?page=news&msg=success');
+    }
+    else{
+        header('location:../?page=news&msg=fail');    
+    }
+}
+
+if(isset($_POST['editprev'])){
+    $id=$_POST['id'];
+    $isi=$_POST['isi'];
+    $nip=$_SESSION['user']['pegawainomorinduk'];
+    $query=
+        "UPDATE ulasan set 
+            pegawainomorinduk=$nip,
+            ulasanpesan='$isi'
+        where
+           ulasanid=$id";
+    if(mysqli_query($conn,$query)){
+        header('location:../?page=review&msg=success');
+    }
+    else{
+        header('location:../?page=review&msg=fail');    
+    }
+}
+
 if(isset($_POST['addpegawai'])){
     $nama=$_POST['nama'];
     $nomorinduk=$_POST['nip'];
@@ -73,15 +117,18 @@ if(isset($_POST['addpegawai'])){
     $gelar=$_POST['gelar'];
     $golongan=$_POST['golongan'];
     $tugas=$_POST['tugas'];
-    $password=md5('12345');
     $query=
         "INSERT into 
             pegawai 
                 (jabatanid,pegawaigelar,pegawaigolongan,pegawainama,pegawainomorinduk,pegawaipassword,pegawaitugas)
             VALUES
-                ($jabatan,'$gelar','$golongan','$nama','$nomorinduk','$password','$tugas') ";
-    mysqli_query($conn,$query);
-    header('location:../?page=pegawai');
+                ($jabatan,'$gelar','$golongan','$nama','$nomorinduk',NULL,'$tugas') ";
+    if(mysqli_query($conn,$query)){
+        header('location:../?page=pegawai&msg=success');
+    }
+    else{
+        header('location:../?page=pegawai&msg=fail');    
+    }
 }
 if(isset($_POST['addsatwa'])){
     $nama=$_POST['nama'];
@@ -111,8 +158,12 @@ if(isset($_POST['addsatwa'])){
                 (jenisid,hewannama,hewanketerangan,hewangambar)
             VALUES
                 ($jenis,'$nama','$keterangan','$gambar') ";
-    mysqli_query($conn,$query);
-    header('location:../?page=satwa');
+    if(mysqli_query($conn,$query)){
+        header('location:../?page=satwa&msg=success');
+    }
+    else{
+        header('location:../?page=satwa&msg=fail');
+    }
 }
 if(isset($_POST['editsatwa'])){
     $nama=$_POST['nama'];
@@ -127,8 +178,12 @@ if(isset($_POST['editsatwa'])){
                 hewanketerangan='$keterangan'
             Where 
                 hewanid=$id";
-    mysqli_query($conn,$query);
-    header('location:../?page=satwa');
+    if(mysqli_query($conn,$query)){
+        header('location:../?page=satwa&msg=success');
+    }
+    else{
+        header('location:../?page=satwa&msg=fail');    
+    }
 }
 
 if(isset($_POST['editpegawai'])){
@@ -147,10 +202,15 @@ if(isset($_POST['editpegawai'])){
                 pegawainama='$nama',
                 pegawaitugas='$tugas'
             WHERE
-                pegawainomorinduk=$nomorinduk";
-    mysqli_query($conn,$query);
-    header('location:../?page=pegawai');
+                pegawainomorinduk=$nomorinduk"; 
+    if(mysqli_query($conn,$query)){
+        header('location:../?page=pegawai&msg=success');
+    }
+    else{
+        header('location:../?page=pegawai&msg=fail');    
+    }
 }
+
 if(isset($_POST['editjenis'])){
     $id=$_POST['id'];
     $nomorinduk=$_POST['nip'];
@@ -160,7 +220,11 @@ if(isset($_POST['editjenis'])){
                 pegawainomorinduk='$nomorinduk'
             WHERE
                 jenisid=$id";
-    mysqli_query($conn,$query);
-    header('location:../?page=jenis');
+    if(mysqli_query($conn,$query)){
+    header('location:../?page=jenis&msg=success');
+    }
+    else{
+    header('location:../?page=jenis&msg=fail');    
+    }
 }
 ?>

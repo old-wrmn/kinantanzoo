@@ -35,16 +35,18 @@
                 <td><?=strtoupper($i['pegawaigolongan'])?></td>
                 <td><?=ucfirst($i['jabatannama'])?></td>
                 <td><?=ucfirst($i['pegawaitugas'])?></td>
+                <?php 
+                if($i['jabatanid']!=0){?>
                 <td>
                     <a href="?page=editpegawai&id=<?=$i['pegawainomorinduk']?>" class="item" data-toggle="tooltip" data-placement="top" title="Edit">
                         <i class="fa fa-pencil-alt"></i>
                     </a>
-                    <a href="?delpegawai&id=<?=$i['pegawainomorinduk']?>" class="item" data-toggle="tooltip" data-placement="top" title="Delete">
+                    <a href="?delpegawai&id=<?=$i['pegawainomorinduk']?>&msg=success" class="item" data-toggle="tooltip" data-placement="top" title="Delete">
                         <i class="fa fa-trash"></i>
                     </a>
                 </td>
             </tr>
-            <?php }?>
+            <?php }}?>
         </tbody>
     </table>
     </div>

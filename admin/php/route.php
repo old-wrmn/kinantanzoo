@@ -1,4 +1,15 @@
 <?php 
+if(isset($_GET['msg'])){
+    $page=$_GET['msg'];
+    switch($page){
+        case 'fail':
+            include 'msg/fail.php';
+            break;
+        case 'success':
+            include 'msg/success.php';
+            break;
+    }
+}
 if(isset($_GET['page'])){
     $page=$_GET['page'];
     switch($page){
@@ -7,6 +18,9 @@ if(isset($_GET['page'])){
             break;
         case 'showprev':
             include 'page/showprev.php';
+            break;
+        case 'editprev':
+            include 'page/editprev.php';
             break;
         case 'jenis':
             include 'page/jenis.php';
@@ -28,6 +42,9 @@ if(isset($_GET['page'])){
             break;
         case 'addnews':
             include 'page/addnews.php';
+            break;
+        case 'editnews':
+            include 'page/editnews.php';
             break;
         case 'shownews':
             include 'page/shownews.php';
@@ -77,6 +94,11 @@ if(isset($_GET['delsatwa'])){
 if(isset($_GET['delnews'])){
     $id=$_GET['id'];
     $query="DELETE from berita where beritaid=$id";
+    mysqli_query($conn,$query);
+}
+if(isset($_GET['delprev'])){
+    $id=$_GET['id'];
+    $query="DELETE from ulasan where ulasanid=$id";
     mysqli_query($conn,$query);
 }
 ?>

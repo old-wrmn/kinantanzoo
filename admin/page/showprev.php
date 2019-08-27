@@ -6,6 +6,16 @@ while($i=mysqli_fetch_array($res)){?>
 <div class="col-lg-12">
 <div class="card">
     <div class="card-header">
+    <div style="float:right">
+        <ul class="nav nav-pills">
+            <li class="nav-item">
+                <td>
+                    <a class="btn btn-primary" href="?page=editprev&id=<?=$id?>">Edit</a>
+                    <a class="btn btn-danger" href="?delprev&id=<?=$id?>&msg=success">Delete</a>
+                </td>
+            </li>
+        </ul>
+    </div>
         <h4><?=ucfirst($i['ulasannama'])?></h4><?=$i['ulasanemail']?>
         <h6><?=$i['ulasanwaktu']?></h6>
     </div>

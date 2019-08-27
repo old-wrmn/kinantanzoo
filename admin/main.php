@@ -61,10 +61,6 @@
                                 Pegawai</a>
                         </li>
                         <li>
-                            <a href="?page=jenis">
-                                jenis</a>
-                        </li>
-                        <li>
                             <a href="?page=satwa">
                                 Satwa</a>
                         </li>
@@ -99,10 +95,6 @@
                         <li>
                             <a href="?page=pegawai">
                                 Pegawai</a>
-                        </li>
-                        <li>
-                            <a href="?page=jenis">
-                                Jenis </a>
                         </li>
                         <li>
                             <a href="?page=satwa">

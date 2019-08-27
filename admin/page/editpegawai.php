@@ -50,12 +50,14 @@ while($hasil=mysqli_fetch_array($res)){
                     </div>
                     <div class="col-12 col-md-9">
                         <select name="jabatan" id="jabatan" class="form-control">
+                        <option>Pilih jabatan...</option>
                         <?php
                         $query="SELECT * from jabatan order by jabatanid";
                         $res=mysqli_query($conn,$query);
-                        while($i=mysqli_fetch_array($res)){?>
+                        while($i=mysqli_fetch_array($res)){
+                            if($i['jabatanid']!=0){?>
                             <option value="<?=$i['jabatanid']?>"><?=ucwords($i['jabatannama'])?></option>
-                        <?php }?>
+                        <?php }}?>
                         </select>
                     </div>
                 </div>
@@ -72,4 +74,4 @@ while($hasil=mysqli_fetch_array($res)){
         </div>
     </div>
 </div>
-<?}?>
+<?php }?>

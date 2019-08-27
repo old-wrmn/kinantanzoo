@@ -8,6 +8,7 @@ var input = document.getElementById('pilihtipe');
 var geojson;
 var request = new XMLHttpRequest();
 var i=1;
+var x = document.getElementById("demo");
 
 request.onreadystatechange = function (response) {
     if (request.readyState === 4) {
@@ -74,6 +75,8 @@ function getLocation() {
 }
 
 function showPosition(position) {
+  x.innerHTML = "Latitude: " + position.coords.latitude + 
+  "<br>Longitude: " + position.coords.longitude; 
     marker.setLngLat([position.coords.longitude, position.coords.latitude]);
     start = [position.coords.longitude, position.coords.latitude];
 }
