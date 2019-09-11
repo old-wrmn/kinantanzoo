@@ -20,6 +20,9 @@ if(isset($_GET['view'])){
         case 'satwa':
             include "view/satwa.php";
             break;
+        case 'profile':
+            include "view/profile.php";
+            break;
         default : 
             include "view/404.php";
             break;

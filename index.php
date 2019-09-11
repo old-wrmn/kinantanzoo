@@ -34,7 +34,7 @@ include 'php/conn.php';
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.2.1/mapbox-gl.css' rel='stylesheet' />
     <style>
     body { margin:0; padding:0; }
-    #map { position:absolute; top:0; bottom:0; width:100%; }
+    #map { position:absolute; top:0; bottom:0; width:100%; height:100%;}
         .marker {
         display: block;
         border: none;
@@ -100,6 +100,7 @@ include 'php/conn.php';
                 
                 <ul class="header-nav__list">
                     <li><a href="?view=home" title="home">Home</a></li>
+                    <li><a href="?view=profile" title="home">Profile</a></li>
                     <li><a href="?view=satwa" title="satwa">Satwa</a></li>
                     <li><a href="?view=news" title="berita">Berita</a></li>
                     <li><a href="?view=review" title="review">Review</a></li>
